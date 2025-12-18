@@ -8,8 +8,8 @@ import java.util.concurrent.Executors;
 public class TestDemo04 {
     /**
      * thenApply和thenApplyAsync
-     * thenApply 表示某个任务执行完成后执行的动作，即回调方法，会将该任务的执行结果即方法返回值作为入参传递到回调方法中，带有返回值。
-     * thenApplyAsync  除了thenApply的功能以外，还支持传入自定义的线程池，并且是会重新开启一个线程执行方法。
+     * thenApply() 表示某个任务执行完成后执行的动作，即回调方法，会将该任务的执行结果即方法返回值作为入参传递到回调方法中，带有返回值。
+     * thenApplyAsync()  除了thenApply的功能以外，还支持传入自定义的线程池，并且是会重新开启一个线程执行方法。
      *
      * @param args
      */

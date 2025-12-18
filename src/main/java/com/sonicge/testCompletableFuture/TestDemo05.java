@@ -7,8 +7,8 @@ import java.util.concurrent.Executors;
 
 public class TestDemo05 {
     /**
-     * thenRun()方法 和 thenRunAsync()方法 两个不支持返回值，接收参数！
-     * 但是后者是异步执行，会开启一个新的线程。需要指定线程池
+     * thenRun()方法 不支持参数，返回值！不会开启一个新线程，和主线程一致！
+     * thenRunAsync()方法 不支持参数，返回值！会开启一个新线程，可以传递自定义的线程池
      * @param args
      */
     public static void main(String[] args) {
