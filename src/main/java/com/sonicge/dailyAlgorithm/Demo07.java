@@ -8,16 +8,11 @@ import java.util.Scanner;
  * 0 <= j <= nums[i] 且
  * i + j < n
  * 返回到达 n - 1 的最小跳跃次数。测试用例保证可以到达 n - 1。
- * 输入: nums = [2,3,1,1,4]
- * 输出: 2
- * 解释: 跳到最后一个位置的最小跳跃数是 2。
- *      从下标为 0 跳到下标为 1 的位置，跳 1 步，然后跳 3 步到达数组的最后一个位置。
+ *
  * @Author: sonicge
  * @CreateTime: 2026-01-23
- *
  */
-
-public class Demo06 {
+public class Demo07 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
@@ -27,25 +22,23 @@ public class Demo06 {
         }
 
         int jump = jump(nums);
-        System.out.println("跳跃到末尾，需要"+jump+"步");
-
+        System.out.println(jump);
 
     }
-    public static int jump(int[] nums){
-        int size=nums.length;
-        if(size == 1)return 0;
-        int cur=0;
-        int res=0;
-        int maxRange=0;
 
-        for(int i=0;i<size;i++){
-            maxRange = Math.max(maxRange,i+nums[i]);
-            //如果当前可以到达的最远距离可以到达末尾的话，直接跳了，不用在范围里面再找最远值了
-            if(maxRange >=size-1){
+    public static int jump(int[] nums) {
+        int size = nums.length;
+        if (size == 1) return 0;
+        int maxRange = 0;
+        int res = 0;
+        int cur = 0;
+        for (int i = 0; i < size; i++) {
+            maxRange = Math.max(maxRange, i + nums[i]);
+            if (maxRange == size - 1) {
                 res++;
                 return res;
             }
-            if(cur == i){
+            if (cur == i) {
                 cur = maxRange;
                 res++;
             }
