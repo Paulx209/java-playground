@@ -7,8 +7,6 @@ import java.util.Scanner;
  * 给定一个二维数组，由X和O两种字符组合而成，如果O连成的区域到达边缘的话，那么这一块区域就不算被围绕的；
  * 否则需要将被围绕的区域全部改成'X'
  *
- *
- *
  * @Author: sonicge
  * @CreateTime: 2026-03-21
  */
