@@ -24,11 +24,11 @@ public class Demo68 {
                 board[i][j] = sc.nextInt();
             }
         }
-        int target = sc.nextInt();
-        //先找到对应的行数 -> 找到最后一个> xxx 满足条件的
-        findMaxTarget(xx,xx);
-        //再找到对应的target
-        int res = findTarget(xx,xx);
+//        int target = sc.nextInt();
+//        //先找到对应的行数 -> 找到最后一个> xxx 满足条件的
+//        findMaxTarget(xx,xx);
+//        //再找到对应的target
+//        int res = findTarget(xx,xx);
 
     }
 
