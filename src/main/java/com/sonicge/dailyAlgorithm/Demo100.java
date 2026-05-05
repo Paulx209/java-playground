@@ -1,10 +1,15 @@
 package com.sonicge.dailyAlgorithm;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
  * 【最小覆盖子串】
  *  滑动窗口
+ *  输入：s = "ADOBECODEBANC", t = "ABC"
+ *  输出："BANC"
+ *  解释：最小覆盖子串 "BANC" 包含来自字符串 t 的 'A'、'B' 和 'C'。
  *@Author: sonicge
  *@CreateTime: 2026-04-12
  */
@@ -16,6 +21,7 @@ public class Demo100 {
         String str2 = sc.next();
         String response = minWindow(str1, str2);
         System.out.println("最小覆盖子串为:" + response);
+        Map<Integer,Integer> map = new LinkedHashMap<>();
     }
 
     public static String minWindow(String s, String t) {
