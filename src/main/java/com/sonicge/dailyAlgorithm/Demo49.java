@@ -1,5 +1,8 @@
 package com.sonicge.dailyAlgorithm;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 /**
@@ -82,5 +85,6 @@ public class Demo49 {
         ListNode listNode = demo49.initNodeList();
         ListNode newNode = demo49.deleteDuplicates(listNode);
         demo49.readAllNode(newNode);
+        Deque<Integer> queue = new LinkedList<>();
     }
 }

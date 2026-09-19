@@ -1,8 +1,6 @@
 package com.sonicge.dailyAlgorithm;
 
-import java.util.Currency;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * 【和为k的子数组】
@@ -26,6 +24,8 @@ public class Demo74 {
         int k = sc.nextInt();
         int res = subarraySum(arr,k);
         System.out.println("和为K的子数组有：" + res);
+
+        Map<Integer,Integer> map = new LinkedHashMap<>();
 
     }
 

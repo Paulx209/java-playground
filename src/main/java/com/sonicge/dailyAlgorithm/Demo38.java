@@ -42,7 +42,7 @@ public class Demo38 {
      */
     public static int findMinArrowShots(int[][] points) {
         int res = 0;
-        //按照start进行排序
+        //按照start进行排序 compare防止类型爆掉 int类型
         Arrays.sort(points, (a, b) -> {
             return Integer.compare(a[0],b[0]);
         });
@@ -50,7 +50,7 @@ public class Demo38 {
         //开始遍历
         for (int i = 1; i < points.length; i++) {
             if(pre[1] >=points[i][0]){
-                //这样说明要更新一下pre的end了
+                //如果有共同区域的话，要更新右边界为小的
                 pre[1] = Math.min(pre[1],points[i][1]);
             }else{
                 res++;

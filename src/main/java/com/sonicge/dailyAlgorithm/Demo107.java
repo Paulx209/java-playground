@@ -33,18 +33,18 @@ public class Demo107 {
         /**
          * 移除元素，如果元素val存在的话，移除并且返回true；如果不存在的话，直接返回false
          */
-        boolean remove(int val){
-            if(!map.containsKey(val)){
-                return false;
-            }
-            int removedIndex = map.get(val);
-            Integer value = list.getLast();
-            list.removeLast();
-            list.set(removedIndex,value);
-            map.remove(val);
-            map.put(value,removedIndex);
-            return true;
-        }
+//        boolean remove(int val){
+//            if(!map.containsKey(val)){
+//                return false;
+//            }
+//            int removedIndex = map.get(val);
+//            Integer value = list.getLast();
+//            list.removeLast();
+//            list.set(removedIndex,value);
+//            map.remove(val);
+//            map.put(value,removedIndex);
+//            return true;
+//        }
         int getRandom(){
             int index = random.nextInt(list.size());
             return list.get(index);

@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
  */
 
 public class Test {
-    static Semaphore semaphore = new Semaphore(2);
+    static Semaphore semaphore = new Semaphore(2,true);
 
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
@@ -24,6 +24,7 @@ public class Test {
         try {
             String threadName = Thread.currentThread().getName();
             while (true) {
+                semaphore.acquire();
                 acquired = semaphore.tryAcquire();
                 if (acquired) {
                     System.out.println(threadName + "进入收费口");

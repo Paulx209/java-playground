@@ -1,4 +1,4 @@
-package com.sonicge.dailyAlgorithm.think;
+package com.sonicge.dailyAlgorithm;
 
 import java.util.Scanner;
 
