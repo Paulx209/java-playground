@@ -65,14 +65,14 @@ public class Demo50 {
         int size = 0;
         ListNode lastNode = null;
         while (temp != null) {
-            if(temp.next==null)lastNode = temp;
+            if (temp.next == null) lastNode = temp;
             temp = temp.next;
             size++;
         }
         //开始旋转链表，其实就是让从下标为x的节点开始分成两段，第二段的最后指向第一段的开头
         int index = size - (k % size);
         temp = dummyHead;
-        for(int i =0;i<index;i++){
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
         ListNode newStart = temp.next;
@@ -82,12 +82,42 @@ public class Demo50 {
         return newStart;
     }
 
+    public static ListNode rotateRightV2(ListNode head, int k) {
+        if(head == null)return head;
+        // 计算长度
+        int size = 0;
+        ListNode temp = head;
+        while (temp != null) {
+            size++;
+            temp = temp.next;
+        }
+        k = k % size;
+        if (k == 0)
+            return head;
+        // 寻找新头结点
+        int len = size - k;
+        temp = head;
+        for (int i = 0; i < len - 1; i++) {
+            temp = temp.next;
+        }
+
+        // 开始旋转
+        ListNode newHead = temp.next;
+        temp.next = null;
+        ListNode cur = newHead;
+        while (cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = head;
+        return newHead;
+    }
+
     public static void main(String[] args) {
         Demo50 demo50 = new Demo50();
         ListNode listNode = demo50.initNodeList();
         Scanner sc = new Scanner(System.in);
         int k = sc.nextInt();
-        ListNode newHead = demo50.rotateRight(listNode, k);
+        ListNode newHead = demo50.rotateRightV2(listNode, k);
         demo50.readAllNode(newHead);
     }
 }
