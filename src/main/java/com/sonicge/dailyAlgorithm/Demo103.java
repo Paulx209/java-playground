@@ -21,7 +21,11 @@ public class Demo103 {
 
     public static void push(int val) {
         numStack.push(val);
-        minStack.push(Math.min(minStack.peek(),val));
+        if(minStack.isEmpty()){
+            minStack.push(val);
+        }else{
+            minStack.push(Math.min(minStack.peek(),val));
+        }
     }
 
     /**
