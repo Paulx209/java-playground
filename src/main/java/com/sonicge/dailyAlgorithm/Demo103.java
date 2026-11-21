@@ -24,6 +24,26 @@ public class Demo103 {
         minStack.push(Math.min(minStack.peek(),val));
     }
 
+    /**
+     * 主要是 minStack 的入栈：如果最小栈为空，直接 push；如果新来的元素 <= 最小值的话 也要入栈
+     */
+    public static void push_v2(int val){
+        numStack.push(val);
+        if(minStack.isEmpty() || val <= minStack.peek()){
+            numStack.push(val);
+        }
+    }
+
+    /**
+     * push的逻辑不同，poll的逻辑也会变化，这里只有在淘汰最小值的时候才会pop
+     */
+    public static void poll_v2(){
+        int val = numStack.pop();
+        if(val == minStack.peek()){
+            minStack.pop();
+        }
+    }
+
     public static int poll() {
         Integer pop = numStack.pop();
         minStack.pop();
